@@ -1,6 +1,7 @@
 import { Navigate, useParams } from "react-router-dom"
 import { getHeroeById } from "../selectors/getHeroeById";
 import { HeroCard } from "./HeroCard";
+import { HeroInfo } from "./HeroInfo";
 
 export const HeroScreen = () => {
 
@@ -15,8 +16,7 @@ export const HeroScreen = () => {
     return (
         <div>
             <h1>Hero</h1>            
-            <HeroCard key={heroe.id} {...heroe} idH='id' />
-            
+            <HeroInfo key={heroe.id} {...heroe} />
         </div>
     )
 }

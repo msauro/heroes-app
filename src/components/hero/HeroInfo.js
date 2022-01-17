@@ -1,17 +1,20 @@
-import { Link, Navigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
-export const HeroCard = ({
+export const HeroInfo = ({
     id, 
     superhero,
     publisher,
     alter_ego,
     characters,
     first_appearance,
-    idH = 'null'
 }) => {
         const imgPath = `/assets/${id}.jpg`;
         var path = `/hero/${id}`;
         
+        const navigate = useNavigate();
+        const handleButton = ()=>{
+            navigate(-1);
+        }
 
         return (
        
@@ -23,10 +26,11 @@ export const HeroCard = ({
                             <img src={imgPath} className="card-img-top" alt={superhero}></img>
                             <p className="card-text">{publisher}</p>
                             <p className="card-text">{publisher}</p>
+                            <p><small>{alter_ego}</small> </p>
                             <p><small>{first_appearance}</small> </p>
-                            {
-                            }
-                            <Link to={path}>Mas..</Link>
+                            <p><small>{characters}</small> </p>
+                            
+                            <button className="btn btn-primary" onClick={handleButton}>Volver</button>
                         </div>
                     </div>
                 </div>
