@@ -28,10 +28,10 @@ export const SearchScreen = () => {
 
 
     return (
-        <>  
-            <div className="container">
+        <>  <div className="row">
+            <div className="col-5">
                 <h1>SearchScreen</h1>
-                <form className="row col-2" onSubmit={handleSubmit}>
+                <form className="row " onSubmit={handleSubmit}>
                     <input 
                     type="text" placeholder="Buscar héroe" name="searchText" className="form-control" value={searchText} onChange={handleInputChange}>
 
@@ -39,7 +39,8 @@ export const SearchScreen = () => {
                     <button className="btn btn-primary mt-2" type="submit" onClick={handleSubmit}>Buscar</button>
                 </form>
             </div>
-            <div className="mt-5 row ">
+            <div className="row  ">
+                
                 {
                     (heroFiltered.length === 0) ? <div className="alert alert-info">No hay resultados</div> 
                     : (q === '') && 
@@ -53,6 +54,7 @@ export const SearchScreen = () => {
                     ))
                     
                 }
+            </div>    
             </div>    
         </>
     )
